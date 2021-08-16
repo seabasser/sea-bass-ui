@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import { getParams } from '../utils';
-import { Main, Section } from '../components';
+import { Main, Section, Button } from '../components';
+
+import './Find.scss';
+import { Currency } from '../components/currency';
 
 const fakeCocktails = [
   'foo',
@@ -22,16 +25,17 @@ const Find: React.FC = () => {
       <Section name='results'>
         { !isFancy
           ? <React.Fragment>
-            <span> The cheapest {input} we could find is: foo </span>
-            <button onClick={handleFancyFlip}>
-                I'm feeling fancy
-            </button>
+            <span className='section-results-title'> The absolute cheapest, bottom shelf {input} we could find is</span>
+            <span> foo for <Currency price={500} currency='USD'/></span>
+            <Button onClick={handleFancyFlip}>
+              ✨ I'm feeling fancy ✨
+            </Button>
           </React.Fragment>
           : <React.Fragment>
             <span> Oh, you're feeling fancy? Try: bar </span>
-            <button onClick={handleFancyFlip}>
+            <Button onClick={handleFancyFlip}>
                 I'm feeling cheap
-            </button>
+            </Button>
           </React.Fragment>
       }
       </Section>

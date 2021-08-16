@@ -1,0 +1,17 @@
+.page-find {
+    display: flex;
+    flex-direction: column;
+    margin: var(--global-y);
+
+    .section-results {
+
+        &-title { font-weight: 300;}
+
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        padding: var(--global-padding-lg);
+        * + * { margin-top: var(--global-margin); }
+    }
+}

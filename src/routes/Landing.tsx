@@ -17,9 +17,11 @@ const liquorList = [
 const Landing: React.FC = () => {
 
   const history = useHistory();
-  const [selectedItem, setSelectedItem] = React.useState('');
 
   const sortedLiquorList = liquorList.sort();
+
+  const [selectedItem, setSelectedItem] = React.useState(sortedLiquorList[0]);
+
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>):void => {
     e.preventDefault();

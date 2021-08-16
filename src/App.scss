@@ -2,16 +2,25 @@
 
     // globals
     --global-color__black: #242423;
-    --global-color__grey-100: #333533;
-    --global-color__grey-200: #CFDBD5;
     --global-color__white: #fafafa;
-    --global-color__shadow: #0f130f;
+
+    --global-color__green-100: #a5d651;
+    --global-color__green-200: #f1fcd3;
+
+    --global-color__red-100: #f95657;
+    --global-color__red-200: #ffdfe3;
+
+    --global-color__blue-100: #4dbcfb;
+    --global-color__blue-200: #e0f4ff;
+
+    --global-color__yellow-100: #ecb417;
+    --global-color__yellow-200: #fff8dd;
 
     // sizes
-    --global-font-size-lg: 2rem;
-    --global-font-size-md: 1.5rem;
+    --global-font-size: 1.5rem;
     --global-font-size-sm: 1rem;
-    --global-font-size: var(--global-font-size-md);
+    --global-font-size-md: var(--global-font-size);
+    --global-font-size-lg: 2rem;
 
     // backgrounds
     --global-background-color: #fdf1db;
@@ -21,9 +30,17 @@
 
     // spacers
     --global-padding: 12px;
-    --global-padding__horizontal: 32px;
-    --global-padding__vertical: var(--global-padding);
+    --global-padding-sm: 8px;
+    --global-padding-md: var(--global-padding);
+    --global-padding-lg: 16px;
+    --global-padding-xl: 24px;
+
     --global-margin: 16px;
+    --global-margin-sm: 12px;
+    --global-margin-md: var(--global-margin);
+    --global-margin-lg: 24px;
+    --global-margin-xl: 32px;
+
     --global-y: 100px;
 
     // cards

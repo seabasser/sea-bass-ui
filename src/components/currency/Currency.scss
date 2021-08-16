@@ -1,0 +1,23 @@
+@mixin generateCurrency($color) {
+    background: var(--global-color__#{$color}-200);
+    color: var(--global-color__#{$color}-100);
+    border: 1px solid var(--global-color__#{$color}-100);
+}
+
+.currency {
+    display: inline-flex;
+    padding: 8px;
+    border-radius: var(--global-border-radius);
+    sub {
+        margin-left: 4px;
+        font-size: 12px;
+        margin-top: auto;
+        margin-bottom: 4px;
+    }
+
+    &-USD { @include generateCurrency(green); }
+    &-ETH { @include generateCurrency(red); }
+    &-LTC { @include generateCurrency(blue); }
+    &-BTC { @include generateCurrency(yellow); }
+    
+}
