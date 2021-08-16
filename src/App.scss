@@ -16,19 +16,8 @@
     // backgrounds
     --global-background-color: #fdf1db;
 
-    // links
-    --a-light-color: var(--global-color__white);
-    --a-light-color__hover: var(--global-color__grey-200);
-    --a-light-color__focus: var(--global-color__grey-200);
-    --a-light-color__visited: var(--global-color__grey-200);
-
-    --a-dark-color: var(--global-color__black);
-    --a-dark-color__hover: var(--global-color__grey-100);
-    --a-dark-color__focus: var(--global-color__grey-100);
-    --a-dark-color__visited: var(--global-color__grey-100);
-
-    // buttons
-    --button-color__active: #bfbfbf;
+    // borders
+    --global-border-thickness: 3px;
 
     // spacers
     --global-padding: 12px;

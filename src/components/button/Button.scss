@@ -1,0 +1,8 @@
+.button {
+    background: var(--global-color__white);
+    border-radius: var(--global-border-radius);
+    border: var(--global-border-thickness) solid var(--global-color__black);
+    padding: var(--global-padding);
+    font-size: var(--global-font-size-sm);
+    font-weight: 700;
+}
