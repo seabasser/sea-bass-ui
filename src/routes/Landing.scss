@@ -1,0 +1,13 @@
+.page-landing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  
+    // padding-top: 75px;
+    .landing-form {
+        display: flex;
+        flex-direction: column;
+        * + * { margin-top: var(--global-padding); }
+    }
+}

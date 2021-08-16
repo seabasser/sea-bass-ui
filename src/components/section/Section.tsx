@@ -5,25 +5,21 @@ import './Section.scss';
 
 interface MainProps {
   className?: string,
-  theme?: 'dark' | 'light',
   children: ReactNode,
+  name: string,
 }
 
-const Section: React.FC<MainProps> = ({ className, theme, children, ...props }) => {
+const Section: React.FC<MainProps> = ({ className, name, children, ...props }) => {
 
   const classes = classNames(
     'section',
-    `section__theme-${theme}`,
+    `section-${name}`,
     className
   );
 
   return (
     <section className={classes} {...props}>{children}</section>
   );
-};
-
-Section.defaultProps = {
-  theme: 'light'
 };
 
 export default Section;

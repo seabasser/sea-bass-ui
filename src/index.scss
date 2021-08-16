@@ -1,17 +1,27 @@
-@import 'utils/_resets';
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 html, body { height: 100% }
 
 body {
   margin: 0;
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--bc-l-background-color);
+}
 
-  font-size: 24px;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
 #root { 
   z-index: -101;
-  height: 100%;
+  display: grid;
+  grid-template-rows: 100px calc(100vh - 100px);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
 }
