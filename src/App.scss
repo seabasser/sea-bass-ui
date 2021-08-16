@@ -4,11 +4,17 @@
     --global-color__black: #242423;
     --global-color__grey-100: #333533;
     --global-color__grey-200: #CFDBD5;
-    --global-color__white: #e8eddf;
+    --global-color__white: #fafafa;
     --global-color__shadow: #0f130f;
 
+    // sizes
+    --global-font-size-lg: 2rem;
+    --global-font-size-md: 1.5rem;
+    --global-font-size-sm: 1rem;
+    --global-font-size: var(--global-font-size-md);
+
     // backgrounds
-    --background-color: var(--global-color__grey-200);
+    --global-background-color: #fdf1db;
 
     // links
     --a-light-color: var(--global-color__white);
@@ -25,9 +31,11 @@
     --button-color__active: #bfbfbf;
 
     // spacers
-    --global-padding: 20px;
+    --global-padding: 12px;
     --global-padding__horizontal: 32px;
     --global-padding__vertical: var(--global-padding);
+    --global-margin: 16px;
+    --global-y: 100px;
 
     // cards
     --global-border-radius: 5px;

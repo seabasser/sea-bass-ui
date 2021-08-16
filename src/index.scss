@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 html, body { height: 100% }
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Valera Round', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--bc-l-background-color);
+  background: var(--global-background-color);
 }
 
 code {
@@ -18,7 +18,10 @@ code {
 #root { 
   z-index: -101;
   display: grid;
-  grid-template-rows: 100px calc(100vh - 100px);
+  grid-template-rows: var(--global-y) calc(100vh - var(--global-y));
+  font-size: var(--global-font-size);
+  letter-spacing: -1px;
+  font-weight: 700;
 }
 
 h1, h2, h3, h4, h5, h6 {

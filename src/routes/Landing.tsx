@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { Dropdown, DropdownItem, Main } from '../components';
+import { Dropdown, DropdownItem, Main, Button } from '../components';
 import { capitalizeFirstLetter } from '../utils';
 
 import './Landing.scss';
@@ -42,7 +42,7 @@ const Landing: React.FC = () => {
         <Dropdown name='liquor' id='liquor' onChange={handleChange}>
           { sortedLiquorList.map(liquor => <DropdownItem value={liquor}>{capitalizeFirstLetter(liquor)}</DropdownItem>)}
         </Dropdown>
-        <input type='submit' value='Submit'/>
+        <Button type='submit' value='Submit'>Find it</Button>
       </form>
     </Main>
   );
