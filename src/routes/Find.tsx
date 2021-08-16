@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+import { useRecoilValue } from 'recoil'
+import { currencyContentState } from "../store/currency";
+import { pricesContentState } from "../store/prices";
 import { useHistory, Link } from 'react-router-dom';
 import { getParams } from '../utils';
 import { Main, Section, Button } from '../components';
 
 import './Find.scss';
 import { CurrencyDisplay } from '../components/currency';
+
+import { CurrenciesInterface} from "../interfaces";
 
 const fakeCocktails = [
   'foo',
@@ -15,10 +20,15 @@ const Find: React.FC = () => {
 
   const input = getParams(useHistory().location.search);
   const [isFancy, setIsFancy] = useState(false);
+  const currency = useRecoilValue(currencyContentState);
+  const prices = useRecoilValue(pricesContentState);
 
-  const handleFancyFlip = () => {
+  const handleFancyFlip = () => { 
     setIsFancy(!isFancy);
   }
+
+  const currentCurrency = currency.type;
+  const calculatedCost = parseFloat((prices[currentCurrency] * 500).toFixed(5)); // sub for current price later
 
   return (
     <Main name='find' className={isFancy ? 'isFancy' : 'isCheap'}>
@@ -26,7 +36,7 @@ const Find: React.FC = () => {
         { !isFancy
           ? <React.Fragment>
             <span className='section-results-title'> The absolute cheapest, bottom shelf {input} we could find is</span>
-            <span> foo for <CurrencyDisplay price={500} currency={"USD"}/></span>
+            <span> foo for <CurrencyDisplay price={calculatedCost} currency={currency.type}/></span>
             <Button onClick={handleFancyFlip}>
               ✨ I'm feeling fancy ✨
             </Button>
@@ -42,10 +52,12 @@ const Find: React.FC = () => {
       <Section name='cocktails'>
         <span> here are the cocktails you could make</span>
         <ul>
-          {fakeCocktails.map(cocktail => <li><Link to={{
-            pathname: '/make',
-            search: `cocktail=${cocktail}`
-          }}>{cocktail}</Link></li>
+          {fakeCocktails.map(cocktail =>
+            <li key={cocktail} >
+              <Link to={{ pathname: '/make', search: `cocktail=${cocktail}`}}>
+                {cocktail}
+              </Link>
+            </li>
           )}
         </ul>
       </Section>

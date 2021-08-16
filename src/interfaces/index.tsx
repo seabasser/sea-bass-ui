@@ -1,1 +1,3 @@
-export * from './sampleInterface';
+export interface CurrenciesInterface {
+    type: 'USD' | 'ETH' | 'BTC' | 'LTC'
+  };

@@ -41,7 +41,7 @@ const Landing: React.FC = () => {
       <form onSubmit={handleSubmit} className='landing-form'>
         <label htmlFor='liquor'> Choose a liquor</label>
         <Dropdown name='liquor' id='liquor' onChange={handleChange}>
-          { sortedLiquorList.map(liquor => <DropdownItem value={liquor}>{capitalizeFirstLetter(liquor)}</DropdownItem>)}
+          { sortedLiquorList.map(liquor => <DropdownItem value={liquor} key={liquor}>{capitalizeFirstLetter(liquor)}</DropdownItem>)}
         </Dropdown>
         <Button type='submit' value='Submit'>Find it</Button>
       </form>

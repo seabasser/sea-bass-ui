@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { useSetRecoilState, useRecoilValue } from 'recoil'
 
 import Landing from './routes/Landing';
 import Find from './routes/Find';
@@ -10,9 +11,24 @@ import './App.scss';
 import { Masthead } from './components';
 
 import CurrencySelector from './components/currency/CurrencySelector';
+import { pricesContentState } from "./store/prices";
 
 const App: React.FC = () => {
 
+  const setPrices = useSetRecoilState(pricesContentState);
+
+  useEffect(() => {
+    fetch("https://api.coinbase.com/v2/exchange-rates?currency=USD")
+    .then(response => response.json())
+    .then(data =>
+      setPrices({
+        BTC: data.data.rates.BTC,
+        ETH: data.data.rates.ETH,
+        LTC: data.data.rates.LTC,
+        USD: 1
+      })
+  )},[])
+  
   return (
     <React.Fragment>
       <Masthead> Seabass <CurrencySelector/></Masthead>
