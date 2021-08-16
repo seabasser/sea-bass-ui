@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Landing from './routes/Landing';
@@ -9,18 +9,20 @@ import NotFound from './routes/NotFound';
 import './App.scss';
 import { Masthead } from './components';
 
+import CurrencySelector from './components/currency/CurrencySelector';
+
 const App: React.FC = () => {
 
   return (
-    <Fragment>
-      <Masthead> Seabass </Masthead>
+    <React.Fragment>
+      <Masthead> Seabass <CurrencySelector/></Masthead>
         <Switch>
           <Route exact path='/' component={ Landing }/>
           <Route exact path='/find' component={ Find }/>
           <Route exact path='/make' component={ Make }/>
           <Route component={ NotFound } />
         </Switch>
-    </Fragment>
+    </React.Fragment>
   );
 };
 

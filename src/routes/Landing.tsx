@@ -25,7 +25,6 @@ const Landing: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>):void => {
     e.preventDefault();
-    console.log(e);
     history.push({
       pathname: '/find',
       search: `?liquor=${selectedItem}`

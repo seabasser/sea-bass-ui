@@ -16,9 +16,8 @@ const DropdownItem: React.FC<DropdownItemProps> = ({ className, value, children,
     className
   );
 
-
   return (
-    <option className={classes} value={value} {...props}>{children}</option>
+    <option className={classes} value={value} {...props} key={value}>{children}</option>
   );
 };
 

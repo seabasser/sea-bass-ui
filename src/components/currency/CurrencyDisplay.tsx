@@ -3,13 +3,13 @@ import classNames from 'classnames';
 
 import './Currency.scss';
 
-interface CurrencyProps {
+interface CurrencyDisplayProps {
   className?: string,
   price: number,
   currency: 'USD' | 'ETH' | 'BTC' | 'LTC'
 }
 
-const Currency: React.FC<CurrencyProps> = ({ className, currency, price, ...props }) => {
+const CurrencyDisplay: React.FC<CurrencyDisplayProps> = ({ className, currency, price, ...props }) => {
 
   const classes = classNames(
     'currency',
@@ -23,4 +23,4 @@ const Currency: React.FC<CurrencyProps> = ({ className, currency, price, ...prop
   );
 };
 
-export default Currency;
+export default CurrencyDisplay;

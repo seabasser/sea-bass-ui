@@ -4,7 +4,7 @@ import { getParams } from '../utils';
 import { Main, Section, Button } from '../components';
 
 import './Find.scss';
-import { Currency } from '../components/currency';
+import { CurrencyDisplay } from '../components/currency';
 
 const fakeCocktails = [
   'foo',
@@ -26,7 +26,7 @@ const Find: React.FC = () => {
         { !isFancy
           ? <React.Fragment>
             <span className='section-results-title'> The absolute cheapest, bottom shelf {input} we could find is</span>
-            <span> foo for <Currency price={500} currency='USD'/></span>
+            <span> foo for <CurrencyDisplay price={500} currency={"USD"}/></span>
             <Button onClick={handleFancyFlip}>
               ✨ I'm feeling fancy ✨
             </Button>
