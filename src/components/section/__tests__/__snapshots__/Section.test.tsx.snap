@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Section /> spec Renders normally 1`] = `
+<DocumentFragment>
+  <section
+    class="section section__theme-light"
+  >
+    test
+  </section>
+</DocumentFragment>
+`;
+
+exports[`<Section /> spec Renders with className 1`] = `
+<DocumentFragment>
+  <section
+    class="section section__theme-light testClass"
+  >
+    test
+  </section>
+</DocumentFragment>
+`;
+
+exports[`<Section /> spec Renders with dark theme 1`] = `
+<DocumentFragment>
+  <section
+    class="section section__theme-dark"
+  >
+    test
+  </section>
+</DocumentFragment>
+`;

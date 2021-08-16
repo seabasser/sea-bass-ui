@@ -1,0 +1,6 @@
+@import '../../utils/_partials.scss';
+
+.section {
+  @include dark-theme;
+  @include light-theme;
+}
