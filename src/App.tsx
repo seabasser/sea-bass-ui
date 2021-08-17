@@ -1,20 +1,20 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil'
+import useFetch from './hooks/useFetch';
+
+import { pricesContentState } from './store/prices';
 
 import Landing from './routes/Landing';
 import Find from './routes/Find';
 import Make from './routes/Make';
 import NotFound from './routes/NotFound';
 
-import './App.scss';
-import { Masthead, Go } from './components';
-import useFetch from './hooks/useFetch';
-
-import CurrencySelector from './components/currency/CurrencySelector';
-import { pricesContentState } from './store/prices';
+import { Masthead, Go, CurrencySelector } from './components';
 
 import { ExchangeInterface } from './interfaces';
+
+import './App.scss';
 
 const App: React.FC = () => {
 

@@ -1,7 +1,9 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { getParams } from '../utils';
+
 import { Main, Section } from '../components';
+
+import { getParams } from '../utils';
 
 const Make: React.FC = () => {
 

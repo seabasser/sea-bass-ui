@@ -6,3 +6,4 @@ export * from './main';
 export * from './button';
 export * from './go';
 export * from './heading';
+export * from './currency';

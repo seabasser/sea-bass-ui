@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { useRecoilValue } from 'recoil'
+import { useHistory } from 'react-router-dom';
+
 import { currencyContentState } from '../store/currency';
 import { pricesContentState } from '../store/prices';
-import { useHistory } from 'react-router-dom';
+
+import { Main, Section, Button, Go, Heading, CurrencyDisplay } from '../components';
+
 import { getParams, normalizePrice } from '../utils';
-import { Main, Section, Button, Go, Heading } from '../components';
 
 import './Find.scss';
-import { CurrencyDisplay } from '../components/currency';
 
 const fakeCocktails = [
   'foo',
