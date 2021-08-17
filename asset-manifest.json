@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/sea-bass-ui/static/css/main.d691d3a0.chunk.css",
-    "main.js": "/sea-bass-ui/static/js/main.9024f558.chunk.js",
-    "main.js.map": "/sea-bass-ui/static/js/main.9024f558.chunk.js.map",
+    "main.css": "/sea-bass-ui/static/css/main.355dc5df.chunk.css",
+    "main.js": "/sea-bass-ui/static/js/main.e28b2ae6.chunk.js",
+    "main.js.map": "/sea-bass-ui/static/js/main.e28b2ae6.chunk.js.map",
     "runtime-main.js": "/sea-bass-ui/static/js/runtime-main.7d72c08c.js",
     "runtime-main.js.map": "/sea-bass-ui/static/js/runtime-main.7d72c08c.js.map",
-    "static/js/2.27a047e7.chunk.js": "/sea-bass-ui/static/js/2.27a047e7.chunk.js",
-    "static/js/2.27a047e7.chunk.js.map": "/sea-bass-ui/static/js/2.27a047e7.chunk.js.map",
+    "static/js/2.fbd89400.chunk.js": "/sea-bass-ui/static/js/2.fbd89400.chunk.js",
+    "static/js/2.fbd89400.chunk.js.map": "/sea-bass-ui/static/js/2.fbd89400.chunk.js.map",
     "index.html": "/sea-bass-ui/index.html",
-    "static/css/main.d691d3a0.chunk.css.map": "/sea-bass-ui/static/css/main.d691d3a0.chunk.css.map",
-    "static/js/2.27a047e7.chunk.js.LICENSE.txt": "/sea-bass-ui/static/js/2.27a047e7.chunk.js.LICENSE.txt"
+    "static/css/main.355dc5df.chunk.css.map": "/sea-bass-ui/static/css/main.355dc5df.chunk.css.map",
+    "static/js/2.fbd89400.chunk.js.LICENSE.txt": "/sea-bass-ui/static/js/2.fbd89400.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7d72c08c.js",
-    "static/js/2.27a047e7.chunk.js",
-    "static/css/main.d691d3a0.chunk.css",
-    "static/js/main.9024f558.chunk.js"
+    "static/js/2.fbd89400.chunk.js",
+    "static/css/main.355dc5df.chunk.css",
+    "static/js/main.e28b2ae6.chunk.js"
   ]
 }
