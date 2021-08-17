@@ -12,9 +12,17 @@ interface ListCocktailsProps {
   input: string
 }
 
+const checkInput = (input: string) => {
+  if(input === 'Rye') {
+    return 'rye whiskey'
+  }
+
+  return input;
+}
+
 const ListCocktails: React.FC<ListCocktailsProps> = ({ input }) => {
 
-  const { data, error }:any= useFetch(`https://cbaas-api.herokuapp.com/drinks?spirit=${input}`);
+  const { data, error }:any= useFetch(`https://cbaas-api.herokuapp.com/drinks?spirit=${checkInput(input)}`);
 
   const isFancy = useRecoilValue(fancyContentState).isFancy;
 
