@@ -24,14 +24,14 @@ function useFetch<T = unknown>(url?: string, options?: RequestInit): State<T> {
   // Keep state logic separated
   const fetchReducer = (state: State<T>, action: Action<T>): State<T> => {
     switch (action.type) {
-      case 'loading':
-        return { ...initialState }
-      case 'fetched':
-        return { ...initialState, data: action.payload }
-      case 'error':
-        return { ...initialState, error: action.payload }
-      default:
-        return state
+    case 'loading':
+      return { ...initialState }
+    case 'fetched':
+      return { ...initialState, data: action.payload }
+    case 'error':
+      return { ...initialState, error: action.payload }
+    default:
+      return state
     }
   }
 
@@ -39,7 +39,7 @@ function useFetch<T = unknown>(url?: string, options?: RequestInit): State<T> {
 
   useEffect(() => {
     // Do nothing if the url is not given
-    if (!url) return
+    if (!url) { return }
     const fetchData = async () => {
       dispatch({ type: 'loading' })
       // If a cache exists for this url, return it
@@ -54,10 +54,10 @@ function useFetch<T = unknown>(url?: string, options?: RequestInit): State<T> {
         }
         const data = (await response.json()) as T
         cache.current[url] = data
-        if (cancelRequest.current) return
+        if (cancelRequest.current) { return }
         dispatch({ type: 'fetched', payload: data })
       } catch (error) {
-        if (cancelRequest.current) return
+        if (cancelRequest.current) { return }
         dispatch({ type: 'error', payload: error as Error })
       }
     }
