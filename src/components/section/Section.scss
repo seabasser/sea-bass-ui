@@ -2,6 +2,6 @@
   background: var(--global-color__white);
   border: var(--global-border-thickness) solid var(--global-color__black);
   border-radius: var(--global-border-radius);
-  padding: var(--global-padding);
+  padding: var(--global-padding-lg);
   & + .section { margin-top: var(--global-margin); }
 }

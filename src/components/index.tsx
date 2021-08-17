@@ -9,3 +9,5 @@ export * from './heading';
 export * from './currency';
 export * from './error';
 export * from './loading';
+export * from './description';
+export * from './card';

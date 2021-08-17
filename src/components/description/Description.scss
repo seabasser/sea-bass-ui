@@ -1,0 +1,16 @@
+.description {
+  margin: var(--global-margin-md) 0;
+  dt {
+    font-weight: var(--global-font-weight-light);
+    font-size: var(--global-font-size-sm);
+    color: var(--global-font-color-light);
+    letter-spacing: normal;
+    margin-bottom: var(--global-font-size-sm);
+  }
+  dd {
+    margin: 0;
+    margin-left: var(--global-margin-md);
+    line-height: 32px;
+  }
+  & + .description { margin-top: var(--global-margin-xl);}
+}

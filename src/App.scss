@@ -24,11 +24,22 @@
     --global-font-size-md: var(--global-font-size);
     --global-font-size-lg: 2rem;
 
+    // weights
+    --global-font-weight: 700;
+    --global-font-weight-light: 300;
+    --global-font-weight-normal: 500;
+    --global-font-weight-bold: 700;
+
+    // font-colors
+    --global-font-color: var(--global-color__black);
+    --global-font-color-light: rgb(56, 56, 56);
+
     // backgrounds
     --global-background-color: #fdf1db;
 
     // borders
     --global-border-thickness: 3px;
+    --global-border-radius: 5px;
 
     // spacers
     --global-padding: 12px;
@@ -38,6 +49,7 @@
     --global-padding-xl: 24px;
 
     --global-margin: 16px;
+    --global-margin-xs: 8px;
     --global-margin-sm: 12px;
     --global-margin-md: var(--global-margin);
     --global-margin-lg: 24px;
@@ -45,6 +57,4 @@
 
     --global-y: 100px;
 
-    // cards
-    --global-border-radius: 5px;
 }
