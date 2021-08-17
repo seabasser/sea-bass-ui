@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { useSetRecoilState, useRecoilValue } from 'recoil'
+import { useSetRecoilState } from 'recoil'
 
 import Landing from './routes/Landing';
 import Find from './routes/Find';
@@ -34,8 +34,8 @@ const App: React.FC = () => {
       <Masthead> Seabass <CurrencySelector/></Masthead>
         <Switch>
           <Route exact path='/' component={ Landing }/>
-          <Route exact path='/find' component={ Find }/>
-          <Route exact path='/make' component={ Make }/>
+          <Route path='/find' component={ Find }/>
+          <Route path='/make' component={ Make }/>
           <Route component={ NotFound } />
         </Switch>
     </React.Fragment>

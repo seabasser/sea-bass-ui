@@ -3,13 +3,11 @@ import { useRecoilValue } from 'recoil'
 import { currencyContentState } from "../store/currency";
 import { pricesContentState } from "../store/prices";
 import { useHistory, Link } from 'react-router-dom';
-import { getParams } from '../utils';
+import { getParams, normalizePrice } from '../utils';
 import { Main, Section, Button } from '../components';
 
 import './Find.scss';
 import { CurrencyDisplay } from '../components/currency';
-
-import { CurrenciesInterface} from "../interfaces";
 
 const fakeCocktails = [
   'foo',
@@ -28,8 +26,7 @@ const Find: React.FC = () => {
   }
 
   const currentCurrency = currency.type;
-  const calculatedCost = parseFloat((prices[currentCurrency] * 500).toFixed(5)); // sub for current price later
-
+  const calculatedCost = normalizePrice(500, prices[currentCurrency], 5);
   return (
     <Main name='find' className={isFancy ? 'isFancy' : 'isCheap'}>
       <Section name='results'>
