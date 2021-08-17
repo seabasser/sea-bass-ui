@@ -21,8 +21,8 @@ const Dropdown: React.FC<DropdownProps> = ({ className, name, id, children, onCh
 
   return (
     <select className={classes} name={name} id={id} onChange={onChange} {...props}>
-        {children}
-     </select>
+      {children}
+    </select>
   );
 };
 

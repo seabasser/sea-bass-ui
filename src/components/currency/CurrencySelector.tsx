@@ -2,7 +2,7 @@ import React from 'react';
 import { useSetRecoilState } from 'recoil'
 
 import { Dropdown, DropdownItem } from '../';
-import { currencyContentState } from "../../store/currency";
+import { currencyContentState } from '../../store/currency';
 
 const currencies = ['USD', 'ETH', 'BTC', 'LTC'];
 
@@ -15,21 +15,21 @@ const CurrencySelector: React.FC = () => {
 
     // TODO rewrite this later
     switch(value) {
-      case 'USD':
-        setCurrency({ type: 'USD' });
-        break;
-      case 'ETH':
-        setCurrency({ type: 'ETH' });
-        break;
-      case 'BTC':
-        setCurrency({ type: 'BTC' });
-        break;
-      case 'LTC':
-        setCurrency({ type: 'LTC' });
-        break;
-      default:
-        setCurrency({ type: 'USD' });
-        break;
+    case 'USD':
+      setCurrency({ type: 'USD' });
+      break;
+    case 'ETH':
+      setCurrency({ type: 'ETH' });
+      break;
+    case 'BTC':
+      setCurrency({ type: 'BTC' });
+      break;
+    case 'LTC':
+      setCurrency({ type: 'LTC' });
+      break;
+    default:
+      setCurrency({ type: 'USD' });
+      break;
     }
   };
 

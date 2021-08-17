@@ -1,7 +1,7 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode } from 'react';
 import classNames from 'classnames';
 
-import "./Main.scss";
+import './Main.scss';
 
 interface MainProps {
     children: ReactNode,

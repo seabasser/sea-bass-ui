@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useRecoilValue } from 'recoil'
-import { currencyContentState } from "../store/currency";
-import { pricesContentState } from "../store/prices";
+import { currencyContentState } from '../store/currency';
+import { pricesContentState } from '../store/prices';
 import { useHistory } from 'react-router-dom';
 import { getParams, normalizePrice } from '../utils';
-import { Main, Section, Button, Go } from '../components';
+import { Main, Section, Button, Go, Heading } from '../components';
 
 import './Find.scss';
 import { CurrencyDisplay } from '../components/currency';
@@ -26,13 +26,13 @@ const Find: React.FC = () => {
   }
 
   const currentCurrency = currency.type;
-  const calculatedCost = normalizePrice(500, prices[currentCurrency], 5);
+  const calculatedCost = normalizePrice(5.98, prices[currentCurrency], 5);
   return (
     <Main name='find' className={isFancy ? 'isFancy' : 'isCheap'}>
       <Section name='results'>
         { !isFancy
           ? <React.Fragment>
-            <span className='section-results-title'> The absolute cheapest, bottom shelf {input} we could find is</span>
+            <Heading Level='h2' weight='light'> The absolute cheapest, bottom shelf {input} we could find is</Heading>
             <span> foo for <CurrencyDisplay price={calculatedCost} currency={currency.type}/></span>
             <Button onClick={handleFancyFlip}>
               ✨ I'm feeling fancy ✨
@@ -44,10 +44,10 @@ const Find: React.FC = () => {
                 I'm feeling cheap
             </Button>
           </React.Fragment>
-      }
+        }
       </Section>
       <Section name='cocktails'>
-        <span> here are the cocktails you could make</span>
+        <Heading Level='h2' weight='light'> here are the cocktails you could make</Heading>
         <ul>
           {fakeCocktails.map(cocktail =>
             <li key={cocktail} >

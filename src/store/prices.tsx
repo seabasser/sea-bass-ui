@@ -1,4 +1,4 @@
-import { atom } from "recoil";
+import { atom } from 'recoil';
 
 export interface PricesContent {
 	BTC: number,
@@ -8,13 +8,13 @@ export interface PricesContent {
 }
 
 const initialState: PricesContent = {
-	BTC: 0,
-	ETH: 0,
-	LTC: 0,
-	USD: 1
+  BTC: 0,
+  ETH: 0,
+  LTC: 0,
+  USD: 1
 };
 
 export const pricesContentState = atom<PricesContent>({
-  key: "PricesContents",
+  key: 'PricesContents',
   default: initialState,
 });

@@ -3,15 +3,17 @@
     flex-direction: column;
     padding: var(--global-y);
 
-    .section-results {
-
-        &-title { font-weight: 300;}
-
+    .section {
         display: flex;
         flex-direction: column;
-        text-align: center;
-        align-items: center;
-        padding: var(--global-padding-lg);
-        * + * { margin-top: var(--global-margin); }
+
+        .heading {
+            align-self: center;
+        }
+        &-results {
+            align-items: center;
+            padding: var(--global-padding-lg);
+            * + * { margin-top: var(--global-margin); }
+        }
     }
 }

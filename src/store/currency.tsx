@@ -1,4 +1,4 @@
-import { atom } from "recoil";
+import { atom } from 'recoil';
 
 export interface CurrencyContent {
   type: 'USD' | 'ETH' | 'BTC' | 'LTC';
@@ -9,6 +9,6 @@ const initialState: CurrencyContent = {
 };
 
 export const currencyContentState = atom<CurrencyContent>({
-  key: "currencyContents",
+  key: 'currencyContents',
   default: initialState,
 });
