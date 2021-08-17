@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useRecoilValue } from 'recoil'
 import { currencyContentState } from "../store/currency";
 import { pricesContentState } from "../store/prices";
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { getParams, normalizePrice } from '../utils';
-import { Main, Section, Button } from '../components';
+import { Main, Section, Button, Go } from '../components';
 
 import './Find.scss';
 import { CurrencyDisplay } from '../components/currency';
@@ -51,9 +51,9 @@ const Find: React.FC = () => {
         <ul>
           {fakeCocktails.map(cocktail =>
             <li key={cocktail} >
-              <Link to={{ pathname: '/make', search: `cocktail=${cocktail}`}}>
+              <Go to={{ pathname: '/make', search: `cocktail=${cocktail}`}}>
                 {cocktail}
-              </Link>
+              </Go>
             </li>
           )}
         </ul>

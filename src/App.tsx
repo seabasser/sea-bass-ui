@@ -8,7 +8,7 @@ import Make from './routes/Make';
 import NotFound from './routes/NotFound';
 
 import './App.scss';
-import { Masthead } from './components';
+import { Masthead, Go } from './components';
 
 import CurrencySelector from './components/currency/CurrencySelector';
 import { pricesContentState } from "./store/prices";
@@ -31,7 +31,7 @@ const App: React.FC = () => {
   
   return (
     <React.Fragment>
-      <Masthead> Seabass <CurrencySelector/></Masthead>
+      <Masthead> <Go to={{pathname: '/' }}>Seabass</Go><CurrencySelector/></Masthead>
         <Switch>
           <Route exact path='/' component={ Landing }/>
           <Route path='/find' component={ Find }/>
