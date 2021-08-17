@@ -17,8 +17,10 @@ code {
 
 #root { 
   z-index: -101;
-  display: grid;
-  grid-template-rows: var(--global-y) calc(100vh - var(--global-y));
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  // grid-template-rows: var(--global-y) auto;
   font-size: var(--global-font-size);
   letter-spacing: -1px;
   font-weight: 700;

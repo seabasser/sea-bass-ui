@@ -4,4 +4,5 @@
     justify-content: space-between;
     padding: 0 var(--global-padding);
     border-bottom: var(--global-border-thickness) solid var(--global-color__black);
+    min-height: var(--global-y);
 }
