@@ -28,7 +28,6 @@ const Make: React.FC = () => {
     Object.keys(currentDrink).filter(key => key.includes('strIngredient') && ingredients.push(currentDrink[key]));
   }
 
-  console.log(currentDrink);
   return (
     <Main name='make'>
       { error && <Error/> }
