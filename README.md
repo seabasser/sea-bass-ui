@@ -1,4 +1,4 @@
-# ts-starter
+# Sea Bass UI
 
 ## Requirements
 
@@ -6,7 +6,7 @@ This projects requires node 14+
 
 ## Running the project
 
-1. `git clone git@github.com:ryelo/ts-starter.git`
+1. `git clone git@github.com:seabasser/sea-bass-ui.git`
 2. `yarn install`
 3. `yarn start`
 4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -67,3 +67,7 @@ Options:
 Will run the linter, fix any errors, and then run the build. This is useful for CI/CD tooling before deploying to prod.
 
 ---
+
+## Additional READMEs
+
+Many folders have additional README's in them on usage. Take a look around!
