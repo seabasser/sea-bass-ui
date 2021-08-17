@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { Dropdown, DropdownItem, Main, Button } from '../components';
+import { Dropdown, DropdownItem, Main, Button, Go } from '../components';
 import { capitalizeFirstLetter } from '../utils';
 
 import './Landing.scss';
@@ -48,6 +48,7 @@ const Landing: React.FC = () => {
         </Dropdown>
         <Button type='submit' value='Submit'>Find it</Button>
       </form>
+      <Go to={{pathname: '/find', search: '?liquor=Alcohol'}} className='drunk-button'> just get me as drunk as possible</Go>
     </Main>
   );
 };

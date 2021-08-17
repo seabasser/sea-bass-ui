@@ -46,7 +46,7 @@ const Find: React.FC = () => {
           <Section name='results'>
             { !isFancy
               ? <React.Fragment>
-                <Heading Level='h2' weight='light'> The absolute cheapest, bottom shelf {input} we could find is</Heading>
+                <Heading Level='h2' weight='light'> { input === 'Alcohol' ? 'Yikes..... ' : '' }The absolute cheapest, bottom shelf {input} we could find is</Heading>
                 <span> {cheapDrink['Brand Name']} for <CurrencyDisplay price={normalizePrice(cheapDrink['Retail Bottle Price'], prices[currentCurrency], 5)} currency={currency.type}/></span>
                 <Button onClick={handleFancyFlip}>
                   ✨ I'm feeling fancy ✨
@@ -54,7 +54,12 @@ const Find: React.FC = () => {
               </React.Fragment>
               : <React.Fragment>
                 <Heading Level='h2' weight='light'> Oh, you're feeling fancy?</Heading>
-                <span> {fancyDrink['Brand Name']} for a whopping <CurrencyDisplay price={normalizePrice(fancyDrink['Retail Bottle Price'], prices[currentCurrency], 5)} currency={currency.type}/></span>
+                { fancyDrink ?
+                  <>
+                    <span> {fancyDrink['Brand Name']} for a whopping <CurrencyDisplay price={normalizePrice(fancyDrink['Retail Bottle Price'], prices[currentCurrency], 5)} currency={currency.type}/></span>
+                  </>
+                  : <span> you actually already saw the fanciest drink...</span>
+                }
                 <Button onClick={handleFancyFlip}>
                     I'm feeling cheap
                 </Button>
