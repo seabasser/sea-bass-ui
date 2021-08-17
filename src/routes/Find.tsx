@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useRecoilValue } from 'recoil'
 import { useHistory } from 'react-router-dom';
+import useFetch from '../hooks/useFetch';
 
 import { currencyContentState } from '../store/currency';
 import { pricesContentState } from '../store/prices';
 
-import { Main, Section, Button, Go, Heading, CurrencyDisplay } from '../components';
+import { Main, Section, Button, Go, Heading, CurrencyDisplay, Error, Loading } from '../components';
 
-import { getParams, normalizePrice } from '../utils';
+import { getParams, normalizePrice, capitalizeFirstLetter } from '../utils';
 
 import './Find.scss';
 
@@ -18,7 +19,9 @@ const fakeCocktails = [
 
 const Find: React.FC = () => {
 
-  const input = getParams(useHistory().location.search);
+  const input = capitalizeFirstLetter(getParams(useHistory().location.search));
+  const { data, error }:any = useFetch(`https://cbaas-api.herokuapp.com/booze?type=${input}`);
+
   const [isFancy, setIsFancy] = useState(false);
   const currency = useRecoilValue(currencyContentState);
   const prices = useRecoilValue(pricesContentState);
@@ -27,39 +30,51 @@ const Find: React.FC = () => {
     setIsFancy(!isFancy);
   }
 
+  console.log(data);
+
+  const cheapDrink = data && data[0];
+  const fancyDrink = data && data[1];
+
   const currentCurrency = currency.type;
-  const calculatedCost = normalizePrice(5.98, prices[currentCurrency], 5);
+
   return (
     <Main name='find' className={isFancy ? 'isFancy' : 'isCheap'}>
-      <Section name='results'>
-        { !isFancy
-          ? <React.Fragment>
-            <Heading Level='h2' weight='light'> The absolute cheapest, bottom shelf {input} we could find is</Heading>
-            <span> foo for <CurrencyDisplay price={calculatedCost} currency={currency.type}/></span>
-            <Button onClick={handleFancyFlip}>
-              ✨ I'm feeling fancy ✨
-            </Button>
-          </React.Fragment>
-          : <React.Fragment>
-            <span> Oh, you're feeling fancy? Try: bar </span>
-            <Button onClick={handleFancyFlip}>
-                I'm feeling cheap
-            </Button>
-          </React.Fragment>
-        }
-      </Section>
-      <Section name='cocktails'>
-        <Heading Level='h2' weight='light'> here are the cocktails you could make</Heading>
-        <ul>
-          {fakeCocktails.map(cocktail =>
-            <li key={cocktail} >
-              <Go to={{ pathname: '/make', search: `cocktail=${cocktail}`}}>
-                {cocktail}
-              </Go>
-            </li>
-          )}
-        </ul>
-      </Section>
+      { error && <Error/> }
+      { !data && !error && <Loading/> }
+      { data &&
+        <>
+          <Section name='results'>
+            { !isFancy
+              ? <React.Fragment>
+                <Heading Level='h2' weight='light'> The absolute cheapest, bottom shelf {input} we could find is</Heading>
+                <span> {cheapDrink['Brand Name']} for <CurrencyDisplay price={normalizePrice(cheapDrink['Retail Bottle Price'], prices[currentCurrency], 5)} currency={currency.type}/></span>
+                <Button onClick={handleFancyFlip}>
+                  ✨ I'm feeling fancy ✨
+                </Button>
+              </React.Fragment>
+              : <React.Fragment>
+                <Heading Level='h2' weight='light'> Oh, you're feeling fancy?</Heading>
+                <span> {fancyDrink['Brand Name']} for a whopping <CurrencyDisplay price={normalizePrice(fancyDrink['Retail Bottle Price'], prices[currentCurrency], 5)} currency={currency.type}/></span>
+                <Button onClick={handleFancyFlip}>
+                    I'm feeling cheap
+                </Button>
+              </React.Fragment>
+            }
+          </Section>
+          <Section name='cocktails'>
+            <Heading Level='h2' weight='light'> here are the cocktails you could make{ isFancy ? ', fancy pants' : ''}</Heading>
+            <ul>
+              {fakeCocktails.map(cocktail =>
+                <li key={cocktail} >
+                  <Go to={{ pathname: '/make', search: `cocktail=${cocktail}`}}>
+                    {cocktail}
+                  </Go>
+                </li>
+              )}
+            </ul>
+          </Section>
+        </>
+      }
     </Main>
   );
 };

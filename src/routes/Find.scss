@@ -5,13 +5,13 @@
     .section {
         display: flex;
         flex-direction: column;
-
         .heading {
             align-self: center;
         }
         &-results {
             align-items: center;
             padding: var(--global-padding-lg);
+            text-align: center;
             * + * { margin-top: var(--global-margin); }
         }
     }
