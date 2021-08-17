@@ -7,11 +7,14 @@ import { capitalizeFirstLetter } from '../utils';
 import './Landing.scss';
 
 const liquorList = [
-  'vodka',
   'gin',
-  'whiskey',
+  'vodka',
   'tequila',
-  'rum'
+  'rum',
+  'whisky',
+  'scotch',
+  'rye',
+  'bourbon'
 ];
 
 const Landing: React.FC = () => {
