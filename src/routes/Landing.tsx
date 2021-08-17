@@ -13,7 +13,7 @@ const liquorList = [
   'rum',
   'whisky',
   'scotch',
-  'rye',
+  'rye whisky',
   'bourbon'
 ];
 
