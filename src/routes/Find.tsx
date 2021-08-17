@@ -12,8 +12,8 @@ import { getParams, normalizePrice } from '../utils';
 import './Find.scss';
 
 const fakeCocktails = [
-  'foo',
-  'bar'
+  'Martini',
+  'Margarita'
 ]
 
 const Find: React.FC = () => {

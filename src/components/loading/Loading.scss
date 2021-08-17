@@ -1,0 +1,16 @@
+@keyframes rotating {
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.loading {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: 6px solid var(--global-background-color);
+  border-top: 6px solid var(--global-color__black);
+  animation: rotating 1.2s infinite cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  margin-left: auto;
+  margin-right: auto;
+}

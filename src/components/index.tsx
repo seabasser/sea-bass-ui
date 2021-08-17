@@ -7,3 +7,5 @@ export * from './button';
 export * from './go';
 export * from './heading';
 export * from './currency';
+export * from './error';
+export * from './loading';
