@@ -18,6 +18,12 @@
     &-USD { @include generateCurrency(green); }
     &-ETH { @include generateCurrency(red); }
     &-LTC { @include generateCurrency(blue); }
-    &-BTC { @include generateCurrency(yellow); }
+
+    // for some reason GH pages does not like the interpolation above for yellow?
+    &-BTC {
+        background: var(--global-color__yellow-200);
+        color: var(--global-color__yellow-100);
+        border: 1px solid var(--global-color__yellow-100);
+    }
     
 }
