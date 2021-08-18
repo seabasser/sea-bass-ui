@@ -29,8 +29,14 @@
     border-radius: 0;
     padding: 0;
     top: 0;
+    letter-spacing: -1px;
 
     &:hover, &:focus, &:active {
         background-color: var(--global-color__blue-300);
     }
+}
+
+.button.button-isIcon {
+    padding: 5px;
+    display: flex;
 }

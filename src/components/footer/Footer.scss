@@ -7,4 +7,14 @@
   background: var(--global-background-color);
   border-top: 3px solid var(--footer-color);
   color: var(--footer-color-100);
+  margin-top: auto;
+
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+
+  * {
+    font-size: var(--global-font-size-sm);
+    margin: 0 10px;
+  }
 }

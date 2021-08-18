@@ -6,14 +6,16 @@ import './Button.scss';
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string
     children: React.ReactNode,
-    isLink?: boolean
+    isLink?: boolean,
+    isIcon?: boolean
 }
 
-const Button: React.FC<ButtonProps> = ({ className, children, isLink, ...props }) => {
+const Button: React.FC<ButtonProps> = ({ className, children, isLink, isIcon, ...props }) => {
 
   const classes = classNames(
     'button',
     { ['button-isLink'] : isLink },
+    { ['button-isIcon'] : isIcon },
     className
   );
 

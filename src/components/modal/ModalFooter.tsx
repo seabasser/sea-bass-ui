@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import classNames from 'classnames';
 
 import './Modal.scss'
 
@@ -8,8 +9,14 @@ interface ModalFooterProps {
 }
 
 const ModalFooter: React.FC<ModalFooterProps> = ({ children, className }) => {
+
+  const classes = classNames(
+    'modal-content-footer',
+    className
+  );
+
   return (
-    <div className={`bc-modal-content-footer ${className}`}>
+    <div className={classes}>
       {children}
     </div>
   )

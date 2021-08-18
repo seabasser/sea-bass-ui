@@ -5,6 +5,7 @@ import { Modal, ModalBody, Button } from '..';
 
 
 import './Footer.scss';
+import { Heading } from '../heading';
 
 interface FooterProps {
   className?: string
@@ -22,10 +23,13 @@ const Footer: React.FC<FooterProps> = ({ className, ...props }) => {
 
   return (
     <React.Fragment>
-      <footer className={classes} {...props}><Button onClick={() => setIsModalOpen(!isModalOpen)} isLink> test </Button></footer>
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title='Share with your friends!'>
+      <footer className={classes} {...props}>
+        <span> please drink responsibly </span> 
+        <Button onClick={() => setIsModalOpen(!isModalOpen)} isLink> acknowledgements</Button>
+      </footer>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title='Acknowledgements'>
         <ModalBody>
-          test
+          <Heading Level='h3' weight='light'> Thank you! </Heading>
         </ModalBody>
       </Modal>
     </React.Fragment>
