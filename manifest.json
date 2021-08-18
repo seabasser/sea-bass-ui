@@ -7,8 +7,8 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo.svg",
-      "type": "svg",
+      "src": "public/full.png",
+      "type": "image",
       "sizes": "192x192"
     }
   ],
