@@ -1,0 +1,10 @@
+.footer {
+
+  --footer-color: #f0e5cf;
+  --footer-color-100: #bfb6a3;
+
+  padding: var(--global-padding-md);
+  background: var(--global-background-color);
+  border-top: 3px solid var(--footer-color);
+  color: var(--footer-color-100);
+}

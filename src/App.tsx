@@ -10,7 +10,7 @@ import Find from './routes/Find';
 import Make from './routes/Make';
 import NotFound from './routes/NotFound';
 
-import { Masthead, Go, CurrencySelector, Brand } from './components';
+import { Masthead, Go, CurrencySelector, Brand, Footer } from './components';
 
 import { ExchangeInterface } from './interfaces';
 
@@ -38,6 +38,7 @@ const App: React.FC = () => {
         <Route path='/make' component={ Make }/>
         <Route component={ NotFound } />
       </Switch>
+      <Footer/>
     </React.Fragment>
   );
 };
