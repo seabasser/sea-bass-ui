@@ -10,7 +10,7 @@ import Find from './routes/Find';
 import Make from './routes/Make';
 import NotFound from './routes/NotFound';
 
-import { Masthead, Go, CurrencySelector } from './components';
+import { Masthead, Go, CurrencySelector, Brand } from './components';
 
 import { ExchangeInterface } from './interfaces';
 
@@ -31,7 +31,7 @@ const App: React.FC = () => {
   
   return (
     <React.Fragment>
-      <Masthead> <Go to={{pathname: '/'}}>Seabass</Go><CurrencySelector/></Masthead>
+      <Masthead> <Go to={{pathname: '/'}} isPlain><Brand image='text' size='sm'/></Go><CurrencySelector/></Masthead>
       <Switch>
         <Route exact path='/' component={ Landing }/>
         <Route path='/find' component={ Find }/>
