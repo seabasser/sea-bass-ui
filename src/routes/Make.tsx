@@ -30,24 +30,10 @@ const Make: React.FC = () => {
     Object.keys(currentDrink).filter(key => key.includes('strIngredient') && ingredients.push(currentDrink[key]));
   }
 
-  function the_dude(d: string) {
-    if (d === 'White Russian') {
-      return (
-        <div>
-          <img src="./images/the-dude.gif" alt="The Dude" width="200" height="auto" />
-        </div>
-      )
-    }
-  }
-
   console.log('spec', { data, error });
 
   const checkDrink = (drink: string) => {
-    if (drink === 'White Russian') {
-      return (
-        ', Dude?'
-      )
-    }
+    if (drink === 'White Russian') { return (', Dude?') }
   }
 
   return (
