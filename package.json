@@ -1,6 +1,5 @@
 {
   "name": "seabass",
-  "homepage": "https://seabasser.github.io/sea-bass-ui",
   "version": "0.0.1",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
