@@ -15,7 +15,7 @@ export const normalizePrice = (price: number, exchangeRate: number, digitsPastDe
 // Checks drink and sends appropriate message depending on the drink
 export const checkDrinkError = (drink: string):string | undefined => {
   if (drink === 'Alcohol') {
-    return 'Drink . It . Strait'
+    return 'Drink . It . Straight'
   }
 
   return undefined
