@@ -11,3 +11,4 @@ export * from './error';
 export * from './loading';
 export * from './description';
 export * from './card';
+export * from './brand';
