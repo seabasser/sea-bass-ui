@@ -42,7 +42,7 @@ const Make: React.FC = () => {
 
   console.log('spec', { data, error });
 
-  function checkDrink(drink: string) {
+  const checkDrink = (drink: string) => {
     if (drink === 'White Russian') {
       return (
         ', Dude?'
@@ -57,7 +57,9 @@ const Make: React.FC = () => {
       { currentDrink &&
         <Card>
           <CardHeader title={`You want to make a ${input}${checkDrink(input)}`}>
-            {the_dude(input)}
+            {input === 'White Russian' &&
+              <img src="./images/the-dude.gif" alt="The Dude" className="card-header-img" />
+            }
           </CardHeader>
           <CardBody>
             <Description title='Ingredients'>
