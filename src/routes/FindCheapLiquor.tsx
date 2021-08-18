@@ -6,6 +6,8 @@ import { currencyContentState } from '../store/currency';
 import { pricesContentState } from '../store/prices';
 import { fancyContentState } from '../store/fancy';
 
+import { BoozeInterface, BoozeDrinkEntity } from '../interfaces';
+
 import { Section, Button, Heading, CurrencyDisplay, Error, Loading } from '../components';
 
 import { normalizePrice } from '../utils';
@@ -18,16 +20,18 @@ interface FindCheapLiquorProps {
 
 const FindCheapLiquor: React.FC<FindCheapLiquorProps> = ({ input }) => {
 
-  const { data, error }:any = useFetch(`https://cbaas-api.herokuapp.com/booze?type=${input}`);
+  const { data, error } = useFetch<BoozeInterface>(`https://cbaas-api.herokuapp.com/booze?type=${input}`);
   const setFancy = useSetRecoilState(fancyContentState);
   const currency = useRecoilValue(currencyContentState);
   const prices = useRecoilValue(pricesContentState);
   const isFancy = useRecoilValue(fancyContentState).isFancy;
 
-  const cheapDrink = data && data[0];
-  const fancyDrink = data && data[1];
+  const cheapDrink:BoozeDrinkEntity = data && data[0];
+  const fancyDrink:BoozeDrinkEntity = data && data[1];
 
   const currentCurrency = currency.type;
+
+  console.log('Booze', {data, error});
 
   return (
     <React.Fragment>

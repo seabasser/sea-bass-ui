@@ -4,6 +4,8 @@ import useFetch from '../hooks/useFetch';
 
 import { fancyContentState } from '../store/fancy';
 
+import { SpiritDrinkInterface } from '../interfaces';
+
 import { Section, Heading, Error, Loading, Go } from '../components';
 
 import './ListCocktails.scss';
@@ -22,12 +24,11 @@ const checkInput = (input: string) => {
 
 const ListCocktails: React.FC<ListCocktailsProps> = ({ input }) => {
 
-  const { data, error }:any= useFetch(`https://cbaas-api.herokuapp.com/drinks?spirit=${checkInput(input)}`);
+  const { data, error } = useFetch<SpiritDrinkInterface>(`https://cbaas-api.herokuapp.com/drinks?spirit=${checkInput(input)}`);
 
   const isFancy = useRecoilValue(fancyContentState).isFancy;
 
-  console.log(data);
-
+  console.log('Spirit', {data, error});
   return (
     <React.Fragment>
       { error && <Error/> }

@@ -2,6 +2,8 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 
+import { SpecDrinkInterface } from '../interfaces';
+
 import { Main, Error, Loading, Description, DescriptionItem, Card, CardHeader, CardBody } from '../components';
 
 import { getParams } from '../utils';
@@ -19,8 +21,8 @@ const generateTextString = (amount:string, ingredient:string):string => {
 const Make: React.FC = () => {
 
   const input = getParams(useHistory().location.search);
-  const { data, error }:any = useFetch(`https://cbaas-api.herokuapp.com/spec?name=${input}`);
-  const currentDrink = data && data?.drinks[0];
+  const { data, error } = useFetch<SpecDrinkInterface>(`https://cbaas-api.herokuapp.com/spec?name=${input}`);
+  const currentDrink = data && data.drinks[0];
 
   // api returns weird results, so we have to do some work to get the ingredients
   const ingredients:string[] = [];
@@ -28,11 +30,13 @@ const Make: React.FC = () => {
     Object.keys(currentDrink).filter(key => key.includes('strIngredient') && ingredients.push(currentDrink[key]));
   }
 
+  console.log('spec', {data, error});
+
   return (
     <Main name='make'>
       { error && <Error/> }
       { !data && !error && <Loading/> }
-      { data &&
+      { currentDrink &&
         <Card>
           <CardHeader title={`You want to make a ${input}?`}/>
           <CardBody>
