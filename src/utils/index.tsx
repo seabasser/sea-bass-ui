@@ -4,7 +4,7 @@ export const capitalizeFirstLetter = (string:string):string => {
 
 // get params from url
 export const getParams = (param: string):string => {
-  return param.split('=')[1];
+  return decodeURI(param.split('=')[1]);
 }
 
 // converts price and limits decimal places
