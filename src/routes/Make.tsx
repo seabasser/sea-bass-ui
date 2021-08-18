@@ -30,7 +30,11 @@ const Make: React.FC = () => {
     Object.keys(currentDrink).filter(key => key.includes('strIngredient') && ingredients.push(currentDrink[key]));
   }
 
-  console.log('spec', {data, error});
+  console.log('spec', { data, error });
+
+  const checkDrink = (drink: string) => {
+    return drink === 'White Russian' ? ', Dude' : '';
+  }
 
   return (
     <Main name='make'>
@@ -38,7 +42,11 @@ const Make: React.FC = () => {
       { !data && !error && <Loading/> }
       { currentDrink &&
         <Card>
-          <CardHeader title={`You want to make a ${input}?`}/>
+          <CardHeader title={`You want to make a ${input}${checkDrink(input)}`}>
+            {input === 'White Russian' &&
+              <img src="./images/the-dude.gif" alt="The Dude" className="card-header-img" />
+            }
+          </CardHeader>
           <CardBody>
             <Description title='Ingredients'>
               { ingredients.map((ingredient, index) => ingredient && <DescriptionItem text={generateTextString(currentDrink['strMeasure' + (index+1).toString()], ingredient)} key={ingredient}/>)}
