@@ -1,0 +1,15 @@
+.brand {
+
+  --brand-modifier: 25px;
+  --brand-md: 100px;
+  --brand-lg: calc(var(--brand-md) + var(--brand-modifier));
+  --brand-xl: calc(var(--brand-lg) + var(--brand-modifier));
+  --brand-sm: calc(var(--brand-md) - var(--brand-modifier));
+  --brand-xs: calc(var(--brand-md) - var(--brand-modifier));
+
+  &-xs { height: var(--brand-xs); }
+  &-sm { height: var(--brand-sm); }
+  &-md { height: var(--brand-md); }
+  &-lg { height: var(--brand-lg); }
+  &-xl { height: var(--brand-xl); }
+}

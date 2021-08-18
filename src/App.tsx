@@ -31,7 +31,7 @@ const App: React.FC = () => {
   
   return (
     <React.Fragment>
-      <Masthead> <Go to={{pathname: '/'}}><Brand image='title'/></Go><CurrencySelector/></Masthead>
+      <Masthead> <Go to={{pathname: '/'}} isPlain><Brand image='text' size='sm'/></Go><CurrencySelector/></Masthead>
       <Switch>
         <Route exact path='/' component={ Landing }/>
         <Route path='/find' component={ Find }/>

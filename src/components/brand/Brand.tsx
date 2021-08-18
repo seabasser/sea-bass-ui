@@ -5,7 +5,7 @@ import './Brand.scss';
 
 interface BrandProps {
   className?: string,
-  image: 'fish' | 'full' | 'square' | 'title-color' | 'title',
+  image: 'fish' | 'full-color' | 'full' | 'square' | 'text',
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 }
 
@@ -16,7 +16,6 @@ const Brand: React.FC<BrandProps> = ({ className, image, size, ...props }) => {
     `brand-${size}`,
     className
   );
-
 
   return (
     <img src={`./images/${image}.png`} className={classes} {...props}/>
