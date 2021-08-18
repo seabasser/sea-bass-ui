@@ -11,7 +11,7 @@ const liquorList = [
   'vodka',
   'tequila',
   'rum',
-  'whisky',
+  'whiskey',
   'scotch',
   'rye',
   'bourbon'
