@@ -8,6 +8,13 @@
     &:hover, &:focus, &:active {
         background-color: var(--global-color__blue-300);
     }
+    &.go-isSmall {
+        font-size: var(--global-font-size-sm);
+        svg {
+            position: relative;
+            top: 2px;
+        }
+    }
 }
 
 .go.go-isPlain {
