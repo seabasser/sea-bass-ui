@@ -1,0 +1,52 @@
+/* The Modal (background) */
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: calc(var(--global-y) + 50px); /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.726); /* Black w/ opacity */
+}
+
+.modal-closed {
+  display: none; /* Hidden by default */
+}
+
+.modal-open {
+  display: block;
+}
+
+
+.modal-content {
+  --c-card--padding: var(--global-padding-lg);
+
+  background: var(--global-color__white);
+  border: var(--global-border-thickness) solid var(--global-color__black);
+  border-radius: var(--global-border-radius);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.04), 0 3px 6px rgba(0, 0, 0, 0.06);
+
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+
+  &-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: var(--global-border-thickness) solid var(--global-color__black);
+    padding: var(--c-card--padding);
+  }
+
+  &-body {
+    padding: var(--c-card--padding);
+  }
+
+  &-footer {
+    border-top: 1px solid var(--global-color__grey-200);
+    padding: var(--c-card--padding);
+  }
+}
