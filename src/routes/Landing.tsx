@@ -1,5 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { useSetRecoilState } from 'recoil'
+
+import { fancyContentState } from '../store/fancy';
 
 import { Dropdown, DropdownItem, Main, Button, Go } from '../components';
 import { capitalizeFirstLetter } from '../utils';
@@ -22,6 +25,8 @@ const liquorList = [
 const Landing: React.FC = () => {
 
   const history = useHistory();
+  const setFancy = useSetRecoilState(fancyContentState);
+  setFancy({ isFancy: false });
 
   const sortedLiquorList = liquorList.sort();
 
