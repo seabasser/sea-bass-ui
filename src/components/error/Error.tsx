@@ -7,8 +7,8 @@ import './Error.scss';
 
 interface ErrorProps {
   className?: string,
-  text: string,
-  header: string
+  text?: string,
+  header?: string
 }
 
 const Error: React.FC<ErrorProps> = ({ className, text, header, ...props }) => {
@@ -17,6 +17,11 @@ const Error: React.FC<ErrorProps> = ({ className, text, header, ...props }) => {
     'error',
     className
   );
+
+  Error.defaultProps = {
+    text: 'You dug this grave yourself',
+    header: 'oh, fiddlesticks!'
+  }
 
   return (
     <Section name='error' className={classes} {...props}>
