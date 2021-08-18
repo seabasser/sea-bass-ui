@@ -7,4 +7,17 @@
   @media only screen and (max-width: 564px) {
     --page-padding: 32px;
   }
+
+  &:before {
+    content: "";
+    background-image: url('../../images/fish.png');
+    background-size: cover;
+    position: fixed;
+    top: var(--global-y);
+    right: 0px;
+    bottom: 0px;
+    left: 500px;
+    opacity: 0.05;
+    z-index: -100;
+  }
 }
