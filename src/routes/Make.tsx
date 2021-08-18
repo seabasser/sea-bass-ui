@@ -43,7 +43,7 @@ const Make: React.FC = () => {
   console.log('spec', { data, error });
 
   function checkDrink(drink: string) {
-    if (input === 'White Russian') {
+    if (drink === 'White Russian') {
       return (
         ', Dude?'
       )
