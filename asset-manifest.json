@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/sea-bass-ui/static/css/main.a2f04921.chunk.css",
+    "main.css": "/sea-bass-ui/static/css/main.2b76d4c4.chunk.css",
     "main.js": "/sea-bass-ui/static/js/main.919bdbb9.chunk.js",
     "main.js.map": "/sea-bass-ui/static/js/main.919bdbb9.chunk.js.map",
     "runtime-main.js": "/sea-bass-ui/static/js/runtime-main.b6c9b34f.js",
@@ -8,13 +8,14 @@
     "static/js/2.8775f3b3.chunk.js": "/sea-bass-ui/static/js/2.8775f3b3.chunk.js",
     "static/js/2.8775f3b3.chunk.js.map": "/sea-bass-ui/static/js/2.8775f3b3.chunk.js.map",
     "index.html": "/sea-bass-ui/index.html",
-    "static/css/main.a2f04921.chunk.css.map": "/sea-bass-ui/static/css/main.a2f04921.chunk.css.map",
-    "static/js/2.8775f3b3.chunk.js.LICENSE.txt": "/sea-bass-ui/static/js/2.8775f3b3.chunk.js.LICENSE.txt"
+    "static/css/main.2b76d4c4.chunk.css.map": "/sea-bass-ui/static/css/main.2b76d4c4.chunk.css.map",
+    "static/js/2.8775f3b3.chunk.js.LICENSE.txt": "/sea-bass-ui/static/js/2.8775f3b3.chunk.js.LICENSE.txt",
+    "static/media/Main.scss": "/sea-bass-ui/static/media/fish.8fae55fe.png"
   },
   "entrypoints": [
     "static/js/runtime-main.b6c9b34f.js",
     "static/js/2.8775f3b3.chunk.js",
-    "static/css/main.a2f04921.chunk.css",
+    "static/css/main.2b76d4c4.chunk.css",
     "static/js/main.919bdbb9.chunk.js"
   ]
 }
