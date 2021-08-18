@@ -6,7 +6,7 @@ import { SpecDrinkInterface } from '../interfaces';
 
 import { Main, Error, Loading, Description, DescriptionItem, Card, CardHeader, CardBody } from '../components';
 
-import { getParams } from '../utils';
+import { getParams, checkDrinkError, getErrorHeader } from '../utils';
 
 import './Make.scss';
 
@@ -38,7 +38,7 @@ const Make: React.FC = () => {
 
   return (
     <Main name='make'>
-      { error && <Error/> }
+      { error && <Error text={checkDrinkError(input)} header={getErrorHeader(input)}/>}
       { !data && !error && <Loading/> }
       { currentDrink &&
         <Card>

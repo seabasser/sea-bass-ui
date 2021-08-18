@@ -8,6 +8,8 @@ import { SpiritDrinkInterface } from '../interfaces';
 
 import { Section, Heading, Error, Loading, Go } from '../components';
 
+import { checkDrinkError, getErrorHeader } from '../utils';
+
 import './ListCocktails.scss';
 
 interface ListCocktailsProps {
@@ -31,7 +33,7 @@ const ListCocktails: React.FC<ListCocktailsProps> = ({ input }) => {
   console.log('Spirit', {data, error});
   return (
     <React.Fragment>
-      { error && <Error/> }
+      { error && <Error text={checkDrinkError(input)} header={getErrorHeader(input)}/> }
       { !data && !error && <Loading/> }
       { data &&
           <Section name='cocktails'>

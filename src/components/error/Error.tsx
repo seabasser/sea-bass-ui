@@ -7,20 +7,21 @@ import './Error.scss';
 
 interface ErrorProps {
   className?: string,
+  text: string,
+  header: string
 }
 
-const Error: React.FC<ErrorProps> = ({ className, ...props }) => {
+const Error: React.FC<ErrorProps> = ({ className, text, header, ...props }) => {
 
   const classes = classNames(
     'error',
     className
   );
 
-
   return (
     <Section name='error' className={classes} {...props}>
-      <Heading Level='h1'> Oh, fiddlesticks! </Heading>
-      <span> We just hit an error :( </span>
+      <Heading Level='h1'> {header} </Heading>
+      <span> {text} </span>
     </Section>
   );
 };
