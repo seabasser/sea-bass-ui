@@ -30,7 +30,26 @@ const Make: React.FC = () => {
     Object.keys(currentDrink).filter(key => key.includes('strIngredient') && ingredients.push(currentDrink[key]));
   }
 
-  console.log('spec', {data, error});
+  function the_dude(d: string) {
+    console.log(d);
+    if (d == 'White%20Russian') {
+      return (
+        <CardHeader title={'You want to make a White Russian, Dude?'}>
+          <div>
+            <img src="./images/the-dude.gif" alt="The Dude" width="200" height="auto" />
+          </div>
+        </CardHeader>
+      )
+    } else {
+      return (
+        <CardHeader title={`You want to make a ${currentDrink?.strDrink}?`} />
+      )
+    }
+  }
+
+  console.log('spec', { data, error });
+
+  const if_russian = the_dude(input)
 
   return (
     <Main name='make'>
@@ -38,7 +57,7 @@ const Make: React.FC = () => {
       { !data && !error && <Loading/> }
       { currentDrink &&
         <Card>
-          <CardHeader title={`You want to make a ${input}?`}/>
+          {if_russian}
           <CardBody>
             <Description title='Ingredients'>
               { ingredients.map((ingredient, index) => ingredient && <DescriptionItem text={generateTextString(currentDrink['strMeasure' + (index+1).toString()], ingredient)} key={ingredient}/>)}
