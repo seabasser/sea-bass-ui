@@ -13,12 +13,14 @@ interface GoProps {
     state?: string,
   },
   children: ReactNode
+  isPlain?: boolean
 }
 
-const Go: React.FC<GoProps> = ({ className, to, children, ...props }) => {
+const Go: React.FC<GoProps> = ({ className, to, children, isPlain, ...props }) => {
 
   const classes = classNames(
     'go',
+    { 'go-isPlain': isPlain },
     className
   );
 

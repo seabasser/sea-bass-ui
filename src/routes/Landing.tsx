@@ -14,7 +14,9 @@ const liquorList = [
   'whiskey',
   'scotch',
   'rye',
-  'bourbon'
+  'bourbon',
+  'amaretto',
+  'kahlua',
 ];
 
 const Landing: React.FC = () => {
