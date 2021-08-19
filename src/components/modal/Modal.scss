@@ -33,6 +33,10 @@
   margin-right: auto;
   width: 60%;
 
+  @media only screen and (max-width: 564px) {
+    width: 90%;
+  }
+
   &-head {
     display: flex;
     justify-content: space-between;
