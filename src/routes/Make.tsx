@@ -45,7 +45,7 @@ const Make: React.FC = () => {
     <Main name='make'>
       { currentDrink &&
         <Card>
-          <CardHeader title={`You want to make ${indefinite(input)} ${checkDrink(input)}`}>
+          <CardHeader title={`You want to make ${indefinite(input)}${checkDrink(input)}`}>
             {input === 'White Russian' &&
               <img src="./images/the-dude.gif" alt="The Dude" className="card-header-img" />
             }
