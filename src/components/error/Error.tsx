@@ -19,8 +19,8 @@ const Error: React.FC<ErrorProps> = ({ className, text, header, ...props }) => {
   );
 
   Error.defaultProps = {
-    text: 'You dug this grave yourself',
-    header: 'oh, fiddlesticks!'
+    header: 'oh, fiddlesticks!',
+    text: 'We just hit an error :(',
   }
 
   return (

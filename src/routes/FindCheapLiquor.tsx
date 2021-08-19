@@ -10,7 +10,7 @@ import { BoozeInterface, BoozeDrinkEntity } from '../interfaces';
 
 import { Section, Button, Heading, CurrencyDisplay, Error, Loading } from '../components';
 
-import { normalizePrice, checkDrinkError, getErrorHeader } from '../utils';
+import { normalizePrice } from '../utils';
 
 import './Find.scss';
 
@@ -35,7 +35,7 @@ const FindCheapLiquor: React.FC<FindCheapLiquorProps> = ({ input }) => {
 
   return (
     <React.Fragment>
-      { error && <Error text={checkDrinkError(input)} header={getErrorHeader(input)} /> }
+      { error && <Error/> }
       { !data && !error && <Loading/> }
       { data &&
         <Section name='results'>
