@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 
@@ -36,10 +36,11 @@ const Make: React.FC = () => {
     return drink === 'White Russian' ? ', Dude' : '';
   }
 
+  if (error) { return <Main name='error'><Error/></Main> }
+  if (!data) { return <Main name='loading'><Loading/></Main> }
+
   return (
     <Main name='make'>
-      { error && <Error/> }
-      { !data && !error && <Loading/> }
       { currentDrink &&
         <Card>
           <CardHeader title={`You want to make a ${input}${checkDrink(input)}`}>
@@ -57,7 +58,7 @@ const Make: React.FC = () => {
           </CardBody>
         </Card>
       }
-      { !currentDrink && !error && <NotFound/> }
+      { currentDrink == null && <NotFound/> }
     </Main>
   );
 };

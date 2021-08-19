@@ -35,10 +35,11 @@ const FindCheapLiquor: React.FC<FindCheapLiquorProps> = ({ input }) => {
 
   console.log('Booze', {data, error});
 
+  if (error) { return <Error/> }
+  if (!data) { return <Loading/> }
+
   return (
     <React.Fragment>
-      { error && <Error/> }
-      { !data && !error && <Loading/> }
       { data &&
         <Section name='results'>
           { !isFancy
