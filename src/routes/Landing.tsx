@@ -23,7 +23,7 @@ const Landing: React.FC = () => {
   const [selectedItem, setSelectedItem] = React.useState(sortedLiquorList[0]);
 
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>):void => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     history.push({
       pathname: '/find',
@@ -36,12 +36,16 @@ const Landing: React.FC = () => {
     setSelectedItem(value);
   };
 
+  const hiddenLiquors = [
+    'Grain Alcohol'
+  ];
+
   return (
     <Main name='landing'>
       <form onSubmit={handleSubmit} className='landing-form'>
         <label htmlFor='liquor'> Choose a liquor</label>
         <Dropdown name='liquor' id='liquor' onChange={handleChange}>
-          { sortedLiquorList.map(liquor => <DropdownItem value={liquor} key={liquor}>{capitalizeFirstLetter(liquor)}</DropdownItem>)}
+          {sortedLiquorList.map(liquor => <DropdownItem value={liquor} key={liquor} isHidden={hiddenLiquors.includes(liquor)}>{capitalizeFirstLetter(liquor)}</DropdownItem>)}
         </Dropdown>
         <Button type='submit' value='Submit'>Find it</Button>
       </form>

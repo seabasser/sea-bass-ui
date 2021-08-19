@@ -6,13 +6,15 @@ import './DropdownItem.scss';
 interface DropdownItemProps {
   className?: string,
   value: string,
-  children: string
+  children: string,
+  isHidden?: boolean,
 }
 
-const DropdownItem: React.FC<DropdownItemProps> = ({ className, value, children, ...props }) => {
+const DropdownItem: React.FC<DropdownItemProps> = ({ className, value, children, isHidden, ...props }) => {
 
   const classes = classNames(
     'dropdownitem',
+    { ['dropdownitem-isHidden']: isHidden },
     className
   );
 
