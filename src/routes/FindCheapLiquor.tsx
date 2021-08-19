@@ -43,7 +43,7 @@ const FindCheapLiquor: React.FC<FindCheapLiquorProps> = ({ input }) => {
         <Section name='results'>
           { !isFancy
             ? <React.Fragment>
-              <Heading Level='h2' weight='light'> { input === 'Alcohol' ? 'Yikes..... ' : '' }The absolute cheapest, bottom shelf {input} we could find is</Heading>
+              <Heading Level='h2' weight='light'> {input === 'Grain Alcohol' ? 'Yikes..... ' : ''}The absolute cheapest, bottom shelf {input} we could find is</Heading>
               <span> {cheapDrink['Brand Name']} for <CurrencyDisplay price={normalizePrice(cheapDrink['Retail Bottle Price'], prices[currentCurrency], 5)} currency={currency.type}/></span>
               <Button onClick={() => setFancy({ isFancy: !isFancy })}>
                 ✨ I'm feeling fancy ✨
