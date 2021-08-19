@@ -1,7 +1,7 @@
 import React from 'react';
 import { Main, NotFound } from '../components';
 
-import './NotFound.scss';
+import './Unknown.scss';
 
 const Unknown: React.FC = () => {
 
