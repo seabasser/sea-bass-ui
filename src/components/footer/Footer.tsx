@@ -30,6 +30,7 @@ const Footer: React.FC<FooterProps> = ({ className, ...props }) => {
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title='Acknowledgements'>
         <ModalBody>
           <Heading Level='h3' weight='light'> Thank you! </Heading>
+          <p>Art: Jacob Hartsell </p>
         </ModalBody>
       </Modal>
     </React.Fragment>

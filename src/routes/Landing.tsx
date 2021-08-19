@@ -1,31 +1,21 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSetRecoilState } from 'recoil'
+import { useSetRecoilState, useRecoilValue } from 'recoil'
 
 import { fancyContentState } from '../store/fancy';
+import { liquorContentState } from '../store/liquors';
 
 import { Dropdown, DropdownItem, Main, Button, Go } from '../components';
 import { capitalizeFirstLetter } from '../utils';
 
 import './Landing.scss';
 
-const liquorList = [
-  'gin',
-  'vodka',
-  'tequila',
-  'rum',
-  'whiskey',
-  'scotch',
-  'rye',
-  'bourbon',
-  'amaretto',
-  'kahlua',
-];
-
 const Landing: React.FC = () => {
 
   const history = useHistory();
   const setFancy = useSetRecoilState(fancyContentState);
+  const liquorList = useRecoilValue(liquorContentState).liquors;
+
   setFancy({ isFancy: false });
 
   const sortedLiquorList = liquorList.sort();
