@@ -45,7 +45,7 @@ const Landing: React.FC = () => {
         </Dropdown>
         <Button type='submit' value='Submit'>Find it</Button>
       </form>
-      <Go to={{pathname: '/find', search: '?liquor=Alcohol'}} className='drunk-button'> just get me as drunk as possible</Go>
+      <Go to={{ pathname: '/find', search: '?liquor=Grain Alcohol' }} className='drunk-button'> just get me as drunk as possible</Go>
     </Main>
   );
 };
