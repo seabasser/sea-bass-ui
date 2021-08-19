@@ -14,3 +14,4 @@ export * from './card';
 export * from './brand';
 export * from './footer';
 export * from './modal';
+export * from './notFound';

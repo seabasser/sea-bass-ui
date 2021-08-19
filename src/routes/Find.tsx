@@ -2,8 +2,9 @@ import React from 'react';
 import { useRecoilValue } from 'recoil'
 import { useHistory } from 'react-router-dom';
 import { fancyContentState } from '../store/fancy';
+import { liquorContentState } from '../store/liquors';
 
-import { Main } from '../components';
+import { Main, NotFound } from '../components';
 
 import { getParams, capitalizeFirstLetter } from '../utils';
 
@@ -15,12 +16,19 @@ const Find: React.FC = () => {
 
   const input = capitalizeFirstLetter(getParams(useHistory().location.search));
   const isFancy = useRecoilValue(fancyContentState).isFancy;
-  console.log(isFancy);
+  const liquorList = useRecoilValue(liquorContentState).liquors;
+
+  const isInputInList = liquorList.includes(input);
 
   return (
     <Main name='find' className={isFancy ? 'isFancy' : 'isCheap'}>
-      <FindCheapLiquor input={input}/>
-      <ListCocktails input={input}/>
+      { isInputInList ?
+        <React.Fragment>
+          <FindCheapLiquor input={input}/>
+          <ListCocktails input={input}/>
+        </React.Fragment>
+        : <NotFound/>
+      }
     </Main>
   );
 };

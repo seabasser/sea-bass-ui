@@ -1,0 +1,14 @@
+.notFound {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .heading {
+    font-size: 200px;
+    display: inline;
+    color: var(--global-color__tan-100);
+  }
+  img { height: 300px; }
+
+  .go { margin-top: var(--global-margin-lg); }
+}
