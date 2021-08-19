@@ -6,16 +6,16 @@ export interface liquorContent {
 
 const initialState: liquorContent = {
   liquors: [
-    'gin',
-    'vodka',
-    'tequila',
-    'rum',
-    'whiskey',
-    'scotch',
-    'rye',
-    'bourbon',
-    'amaretto',
-    'kahlua',
+    'Gin',
+    'Vodka',
+    'Tequila',
+    'Rum',
+    'Whiskey',
+    'Scotch',
+    'Rye',
+    'Bourbon',
+    'Amaretto',
+    'Kahlua',
   ]
 };
 

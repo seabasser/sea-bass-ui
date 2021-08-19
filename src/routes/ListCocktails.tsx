@@ -29,10 +29,12 @@ const ListCocktails: React.FC<ListCocktailsProps> = ({ input }) => {
   const isFancy = useRecoilValue(fancyContentState).isFancy;
 
   console.log('Spirit', {data, error});
+
+  if (error) { return <Error/> }
+  if (!data) { return <Loading/> }
+
   return (
     <React.Fragment>
-      { error && <Error/> }
-      { !data && !error && <Loading/> }
       { data &&
           <Section name='cocktails'>
             <Heading Level='h2' weight='light'> Here are the {data.count} cocktails you could make{ isFancy ? ', fancy pants' : ''}</Heading>

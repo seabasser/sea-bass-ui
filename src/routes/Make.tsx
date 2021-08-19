@@ -4,7 +4,7 @@ import useFetch from '../hooks/useFetch';
 
 import { SpecDrinkInterface } from '../interfaces';
 
-import { Main, Error, Loading, Description, DescriptionItem, Card, CardHeader, CardBody } from '../components';
+import { Main, Error, Loading, Description, DescriptionItem, Card, CardHeader, CardBody, NotFound } from '../components';
 
 import { getParams } from '../utils';
 
@@ -22,7 +22,7 @@ const Make: React.FC = () => {
 
   const input = getParams(useHistory().location.search);
   const { data, error } = useFetch<SpecDrinkInterface>(`https://cbaas-api.herokuapp.com/spec?name=${input}`);
-  const currentDrink = data && data.drinks[0];
+  const currentDrink = data && data.drinks && data.drinks[0];
 
   // api returns weird results, so we have to do some work to get the ingredients
   const ingredients:string[] = [];
@@ -36,10 +36,11 @@ const Make: React.FC = () => {
     return drink === 'White Russian' ? ', Dude' : '';
   }
 
+  if (error) { return <Main name='error'><Error/></Main> }
+  if (!data) { return <Main name='loading'><Loading/></Main> }
+
   return (
     <Main name='make'>
-      { error && <Error/> }
-      { !data && !error && <Loading/> }
       { currentDrink &&
         <Card>
           <CardHeader title={`You want to make a ${input}${checkDrink(input)}`}>
@@ -57,6 +58,7 @@ const Make: React.FC = () => {
           </CardBody>
         </Card>
       }
+      { currentDrink == null && <NotFound/> }
     </Main>
   );
 };
