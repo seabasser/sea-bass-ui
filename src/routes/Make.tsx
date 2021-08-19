@@ -8,6 +8,8 @@ import { Main, Error, Loading, Description, DescriptionItem, Card, CardHeader, C
 
 import { getParams } from '../utils';
 
+import indefinite from 'indefinite';
+
 import './Make.scss';
 
 const generateTextString = (amount:string, ingredient:string):string => {
@@ -43,7 +45,7 @@ const Make: React.FC = () => {
     <Main name='make'>
       { currentDrink &&
         <Card>
-          <CardHeader title={`You want to make a ${input}${checkDrink(input)}`}>
+          <CardHeader title={`You want to make ${indefinite(input)} ${checkDrink(input)}`}>
             {input === 'White Russian' &&
               <img src="./images/the-dude.gif" alt="The Dude" className="card-header-img" />
             }
