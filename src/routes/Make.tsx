@@ -47,6 +47,9 @@ const Make: React.FC = () => {
             {input === 'White Russian' &&
               <img src="./images/the-dude.gif" alt="The Dude" className="card-header-img" />
             }
+            {input === 'Shots' &&
+              <img src="./images/shots.gif" alt="Shots" className="card-header-img" />
+            }
           </CardHeader>
           <CardBody>
             <Description title='Ingredients'>
