@@ -38,7 +38,7 @@ const Make: React.FC = () => {
 
   return (
     <Main name='make'>
-      { error && <Error/>}
+      { error && <Error/> }
       { !data && !error && <Loading/> }
       { currentDrink &&
         <Card>
