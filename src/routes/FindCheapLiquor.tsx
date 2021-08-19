@@ -8,9 +8,11 @@ import { fancyContentState } from '../store/fancy';
 
 import { BoozeInterface, BoozeDrinkEntity } from '../interfaces';
 
-import { Section, Button, Heading, CurrencyDisplay, Error, Loading } from '../components';
+import { Section, Button, Heading, CurrencyDisplay, Error, Loading, Go } from '../components';
 
 import { normalizePrice } from '../utils';
+
+import { FiChevronLeft } from 'react-icons/fi';
 
 import './Find.scss';
 
@@ -60,6 +62,7 @@ const FindCheapLiquor: React.FC<FindCheapLiquorProps> = ({ input }) => {
               </Button>
             </React.Fragment>
           }
+          <Go to={{ pathname: '/' }} isSmall> <FiChevronLeft/> Back </Go>
         </Section>    
       }
     </React.Fragment>
