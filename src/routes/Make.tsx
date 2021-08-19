@@ -8,6 +8,8 @@ import { Main, Error, Loading, Description, DescriptionItem, Card, CardHeader, C
 
 import { getParams } from '../utils';
 
+import indefinite from 'indefinite';
+
 import './Make.scss';
 
 const generateTextString = (amount:string, ingredient:string):string => {
@@ -36,12 +38,6 @@ const Make: React.FC = () => {
     return drink === 'White Russian' ? ', Dude' : '';
   }
 
-  const vowels = ['a', 'e', 'i', 'o', 'u'];
-
-  const english = (drink: string) => {
-    return vowels.includes(drink.split('')[0].toLowerCase()) ? 'an' : 'a';
-  }
-
   if (error) { return <Main name='error'><Error/></Main> }
   if (!data) { return <Main name='loading'><Loading/></Main> }
 
@@ -49,7 +45,7 @@ const Make: React.FC = () => {
     <Main name='make'>
       { currentDrink &&
         <Card>
-          <CardHeader title={`You want to make ${english(input)} ${input}${checkDrink(input)}`}>
+          <CardHeader title={`You want to make ${indefinite(input)} ${checkDrink(input)}`}>
             {input === 'White Russian' &&
               <img src="./images/the-dude.gif" alt="The Dude" className="card-header-img" />
             }
