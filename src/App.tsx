@@ -8,7 +8,7 @@ import { pricesContentState } from './store/prices';
 import Landing from './routes/Landing';
 import Find from './routes/Find';
 import Make from './routes/Make';
-import NotFound from './routes/NotFound';
+import Unknown from './routes/Unknown';
 
 import { Masthead, Go, CurrencySelector, Brand, Footer } from './components';
 
@@ -36,7 +36,7 @@ const App: React.FC = () => {
         <Route exact path='/' component={ Landing }/>
         <Route path='/find' component={ Find }/>
         <Route path='/make' component={ Make }/>
-        <Route component={ NotFound } />
+        <Route component={ Unknown } />
       </Switch>
       <Footer/>
     </React.Fragment>
