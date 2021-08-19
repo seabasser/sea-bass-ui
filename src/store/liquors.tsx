@@ -16,7 +16,7 @@ const initialState: liquorContent = {
     'Bourbon',
     'Amaretto',
     'Kahlua',
-    'Grain Alcohol'
+    'Grain Alcohol',
   ]
 };
 
